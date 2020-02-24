@@ -1,0 +1,40 @@
+.cherry-falldow {
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 0;
+  text-align: left;
+}
+.cherry-falldow img {
+  animation: falldown ease-out infinite;
+}
+.cherry-falldow .cherry-img-wrap {
+  position: relative;
+  width: 140%;
+  height: 100%;
+  transform: translate(-18%, 0);
+  overflow: hidden;
+}
+@keyframes falldown {
+  100% {
+    transform: translate(0, 100vh) rotate(190deg);
+  }
+}
+@keyframes falldown1 {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(100vw, 100vh) rotate(250deg);
+  }
+}
+@keyframes falldown2 {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(100vw, 100vh) rotate(250deg);
+  }
+}

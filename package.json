@@ -1,0 +1,18 @@
+{
+  "name": "cheery-falldown",
+  "version": "1.0.0",
+  "description": "樱花花瓣随机飘落",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LXY-1"
+  },
+  "author": "lxw",
+  "license": "ISC",
+  "devDependencies": {
+    "jsdoc": "^3.6.3"
+  }
+}

@@ -1,0 +1,75 @@
+// 注意：一定需要给容器一个有效的高度
+// 根据自己需要修改
+@width:100vw;
+@height:100vh;
+.cherry-falldow{
+ width: @width;
+ height: @height; 
+ border:none;
+ border-radius: 5px;
+ overflow: hidden;
+ padding: 0;
+ text-align:left;
+ img{
+    //  7 - 10 s
+   animation: falldown  ease-out infinite;
+//    transition: all 20s ease-in;
+//    position: absolute;
+ }
+//  img:nth-child(1){
+//     animation: falldown1 8s ease-out infinite;
+//  }
+//  img:nth-child(4){
+//     animation: falldown1 8s ease-out infinite;
+//  }
+//  img:nth-child(5){
+//     animation: falldown2 6s ease-out infinite;
+//  }
+ 
+//  img:nth-child(3){
+//     animation: falldown2 6s ease-out infinite;
+//  }
+ // 存放樱花的盒子，樱花的数目基于它的大小。
+ .cherry-img-wrap{
+     position: relative;
+     width: 140%;
+     height: 100%;
+     transform: translate(-18%,0);
+     overflow: hidden;
+ }
+
+ // 不带自旋：比较重，几乎不受风力影响,而且下落比较快，使用的是css3动画，确实时间控制没有js方便，你必须给这些花瓣分别一个合适的时间范围，否则花瓣全部都掉落了，但是还不见新的花瓣从下面过来
+ // 一开始处于top 赋值，也就是隐藏在更高位置的花瓣下落的时间要比较长（动画结束，也就是你设置的从它0%初始状态都100%结束状态也就是掉落底部消失重新开始动画）这个时间要比处于低位置带自旋的那些慢比奥多
+ // 保证一些花瓣飘落了其他处于比较高处的花瓣还在飘落，解决上面花瓣下落很不均匀，中间露出一大片空白。
+ // 总之关键词是 ： 花瓣初始位置分布，随机赋值：有负数，有正数
+ @keyframes falldown { // rotate(-39deg) translateX(193px);
+    
+    // 0%{
+    //     transform: translate(0,0) rotate(0deg);
+    // }
+    100%{
+      transform: translate(0,@height) rotate(190deg);
+    }
+    
+ }
+ @keyframes falldown1 { // rotate(-39deg) translateX(193px);
+    
+    0%{
+        transform: translate(0,0) rotate(0deg);
+    }
+    100%{
+      transform: translate(@width,@height) rotate(250deg);
+    }
+ }
+ @keyframes falldown2 { // rotate(-39deg) translateX(193px);
+    0%{
+        transform: translate(0,0) rotate(0deg);
+    }
+    100%{
+      transform: translate(@width,@height) rotate(250deg);
+    }
+ }
+//  img:nth-child(6){
+     
+//  }
+}

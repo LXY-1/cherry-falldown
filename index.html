@@ -1,0 +1,82 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: lxw
+ * @Date: 2020-02-23 00:40:36
+ * @LastEditors: lxw
+ * @LastEditTime: 2020-02-23 21:27:30
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>樱花花瓣自由飘落</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: #333;
+        }
+        .cheery-content{
+            width: 100%;
+            color: #fff;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .cheery-content div{
+            padding-top: 300px;
+            width: 100%;
+            text-align: center;
+            letter-spacing: 3px;
+            cursor: pointer;
+        }
+        .cheery-content div h2{
+            transition: .5s;
+        }
+        .cheery-content div h2:hover{
+            color: #d71345;
+            transform: scale(.95);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 根据自己的需要取index.less修改cherry-falldow大小后重新编译，切记不要直接在index.html修改cherry-falldow的height和width -->
+    <div class="cherry-falldow" >
+        <!--一开始的固定：樱花大小，樱花间隔，根据容器大小，生成樱花节点数目（img） 不固定地方：樱花一开是的transform相关属性 -->
+        <div class="cherry-img-wrap" id="cherry-img-wrap">
+
+        </div>
+        <div class="cheery-content">
+            <!-- 此处可以插入其他内容 -->
+           <div>
+               <h2>查看源码</h2>
+           </div>
+        </div>
+    </div>
+
+
+    <script src="./js/index.js"></script>
+    <script>
+        let option = {
+            width: 60,//花瓣宽度
+            height: 33,// 花瓣高度
+            baseImgSrc: './imgs/',// 花瓣全局地址前缀
+            imgs: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'],
+            lineNUm: 3,// 花瓣行数
+            minSpeed: 30, // 最慢速度
+            maxSpeed: 80 // 最快速度
+        }
+       const cherryObj = cherryFallen(option, 'cherry-img-wrap')
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+{
+    "tags": {
+        "allowUnknownTags": false
+    },
+    "source": {
+        "include": ["./js"],
+        "exclude": [],
+        "includePattern": ".+\\.js(doc)?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "plugins": [
+       "plugins/markdown"
+    ],
+    "markdown":{
+      "excludeTags":["author"],
+      "hardwarp":true,
+      "idInHeadings":true
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false,
+        "default":{
+            "outputSourceFiles":false,
+            "useLongnameInNav":true
+        }
+    },
+    "opts":{
+        "encoding":"utf8",
+        "destination":"./cherry-jsdoc/",
+        "recurse":true,
+        "readme":"./README.MD"
+    }
+}
